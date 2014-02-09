@@ -1,0 +1,11 @@
+.media-object {
+    max-width: 64px;
+    max-height: 64px;
+}
+.resized {
+    width: 64px;
+    height: 64px;
+}
+.media {
+    text-align: left;
+}

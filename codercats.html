@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>codercats :)</title>
+  </head>
+  
+  <body>
+    <center>
+      <button class="btn btn-success" id="yay">Add one codercat</button>
+      <button class="btn btn-success" id="codercatsx2">Duplicate all codercats</button>
+      <button class="btn btn-danger" id="reset">Clear All</button>
+      <button class="btn btn-warning" id="spawn100">Add 100 codercats</button>
+      <p id="codercount"></p>
+      <p>Click on the buttons above to get started!</p>
+      <p>This insanity was brought to you by <a href="http://whiskers75.com">whiskers75</a>.</p>
+      <hr>
+    </center>
+    
+    <div id="codercats"></div>
+    <script>
+      String.prototype.repeat = function (num) {
+      return new Array(num + 1).join(this);
+      }
+      
+      var spamlimit = 300;
+      var codercats = 0;
+      $("#yay").click(function () {
+      $("#codercats").append("<img src='https://images.weserv.nl/?url=whiskers75.com/codercat.jpg&h=16&w=16' style='max-height: 5%; max-width: 5%;'></img>");
+      codercats++;
+      $("#codercount").html(codercats + " codercats");
+      });
+      $("#codercatsx2").click(function () {
+      codercats = codercats * 2;
+      $("#codercount").html(codercats + " codercats");
+      $("#codercats").html("<img src='https://images.weserv.nl/?url=whiskers75.com/codercat.jpg&h=16&w=16' style='max-height: 5%; max-width: 5%;'></img>".repeat(codercats));
+      });
+      $("#reset").click(function () {
+      codercats = 0;
+      $("#codercats").html("");
+      $("#codercount").html(codercats + " codercats");
+      });
+      $("#spawn100").click(function () {
+      codercats = codercats + 100;
+      $("#codercount").html(codercats + " codercats");
+      $("#codercats").html("<img src='https://images.weserv.nl/?url=whiskers75.com/codercat.jpg&h=16&w=16' style='max-height: 5%; max-width: 5%;'></img>".repeat(codercats));
+      });
+    </script>
+  </body>
+
+</html>
